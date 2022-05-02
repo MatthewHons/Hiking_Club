@@ -26,21 +26,27 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style/read.css">
     <title>Hiking club</title>
 </head>
 
 <body>
-    <!-- <header>
-        <img src="" alt="">
-    </header> -->
+    <header>
+        <div>
+            <h3>Menu</h3>
+        </div>
+    </header>
     <section>
         <?php
         //display the datas
         foreach ($hikes as $hike) : ?>
-            <div>
-                <img src="" alt="">
-                <p> <?php echo $hike["name"]; ?></p>
+            <div class="card" style="background-image: -webkit-linear-gradient(
+            top,
+            rgba(0, 0, 0, 0.2),
+            rgba(255, 255, 255, 0.15)
+            ),
+            url(<?php echo $hike["Img_link"] ?>);">
+                <h2> <?php echo $hike["name"]; ?></h2>
                 <p><?php echo $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
                                                                             echo intdiv($duration, 60) . ':' . ($duration % 60); ?> heure, <?php echo $hike["elevation_gain"]; ?> m</p>
             </div>
