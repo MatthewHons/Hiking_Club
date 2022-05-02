@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
 
 <body>
     <h1>Create a new hike</h1>
-    <form method="GET" action="read.php">
+    <form method="post" action="create_hike.php">
         <label for="name">Name </label>
         <input class="input is-medium" name="name" type="text" placeholder="Name">
         <label for="distance">Distance </label>
@@ -42,8 +43,40 @@
         </div>
 
 
-
     </form>
 </body>
 
 </html>
+<?php
+
+// open the $_SESSION
+
+if (isset($_POST['name'], $_POST['distance'], $_POST['duration'], $_POST['elevation'], $_POST['difficulty'])) {
+    $name = $_POST['name'];
+    $distance = $_POST['distance'];
+    $duration = $_POST['duration'];
+    $elevation = $_POST['elevation'];
+    $difficulty = $_POST['difficulty'];
+    $link = "https://images.unsplash.com/photo-1586508896897-a1863f3e515e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80";
+ echo $difficulty;
+}
+ 
+//hello
+
+
+require_once("connexion.php");
+
+try {
+    $q = $db->prepare("INSERT INTO hikes (name, difficulty, distance, duration, elevation_gain, Img_link) VALUES (:name, :difficulty, :distance, :duration, :elevation, :link)");
+    $q->bindParam(":name", $name, PDO::PARAM_STR, 40);
+    $q->bindParam(":difficulty", $difficulty, PDO::PARAM_STR, 20);
+    $q->bindParam(":distance", $distance, PDO::PARAM_STR, 6);
+    $q->bindParam(":duration", $duration, PDO::PARAM_STR, 5);
+    $q->bindParam(":elevation", $elevation, PDO::PARAM_INT, 5);
+    $q->bindParam(":link", $link, PDO::PARAM_STR, 200);
+    $q->execute();
+    exit;
+} catch (Exception $e) {
+    echo $e;
+    exit;
+}
