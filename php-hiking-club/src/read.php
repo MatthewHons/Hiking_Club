@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require_once("connexion.php");
@@ -28,15 +27,13 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/read.css">
-    <link rel="stylesheet" href="style/text.css">
+    <link rel="stylesheet" href="style/message.css">
     <title>Hiking club</title>
 </head>
 
 <body>
     <header>
-        <?PHP
-            include("./header.php");
-        ?>
+        <?php include 'header.php'; ?>
     </header>
     <section>
         <?php
