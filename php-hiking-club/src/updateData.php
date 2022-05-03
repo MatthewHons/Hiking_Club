@@ -43,4 +43,3 @@ if (!empty($_POST)) {
         header("location: ../read.php?message=createdFailed");
     }
 }
-?>
