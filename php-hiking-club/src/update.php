@@ -57,7 +57,7 @@ include "header.php";
     </div>
 
     <h1>Create a new hike</h1>
-    <form method="post" action="addData.php">
+    <form method="post" action="updateData.php">
         <label for="name">Name </label>
         <input class="input is-medium" name="name" type="text" placeholder="<?php echo $modify["name"]; ?>">
         <label for="distance">Distance </label>
