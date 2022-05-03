@@ -27,6 +27,7 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/read.css">
+    <link rel="stylesheet" href="style/text.css">
     <title>Hiking club</title>
 </head>
 
@@ -48,10 +49,15 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             url(<?php echo $hike["Img_link"] ?>);">
                 <h2> <?php echo $hike["name"]; ?></h2>
                 <p><?php echo $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
-                                                                            echo intdiv($duration, 60) . ':' . ($duration % 60); ?> heure, <?php echo $hike["elevation_gain"]; ?> m</p>
+                                                                            echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?php echo $hike["elevation_gain"]; ?> m</p>
             </div>
         <?php
         endforeach;
+
+        if (isset($_GET['message']) && !empty($_GET['message'])) {
+            include './includes/text.php';
+        }
+
         ?>
     </section>
 </body>

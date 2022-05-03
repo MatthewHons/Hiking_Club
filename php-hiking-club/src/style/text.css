@@ -1,0 +1,30 @@
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: 1s ease-in-out 2s 1 normal forwards fadeAway;
+    border: 1px solid black;
+    background: rgb(200, 220, 210);
+    font-size: 3rem;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+
+@keyframes fadeAway {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+}
