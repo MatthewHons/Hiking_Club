@@ -39,16 +39,21 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
         <?php
         //display the datas
         foreach ($hikes as $hike) : ?>
-            <div class="card" style="background-image: -webkit-linear-gradient(
+            <a href="update.php?id=<?php echo $hike["ID"]; ?>">
+                <div class=" card_hike" style="background-image: -webkit-linear-gradient(
             top,
             rgba(0, 0, 0, 0.2),
             rgba(255, 255, 255, 0.15)
             ),
             url(<?php echo $hike["Img_link"] ?>);">
-                <h2> <?php echo $hike["name"]; ?></h2>
-                <p><?php echo $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
-                                                                            echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?php echo $hike["elevation_gain"]; ?> m</p>
-            </div>
+
+                    <p><?php echo $hike["name"]; ?></p>
+
+                    <p><?php echo $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
+                                                                                echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?php echo $hike["elevation_gain"]; ?> m</p>
+
+                </div>
+            </a>
         <?php
         endforeach;
 
