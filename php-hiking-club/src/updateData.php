@@ -8,7 +8,7 @@ if (!empty($_POST)) {
         !empty($_POST["difficulty"])
     ) {
 
-        $id=$_GET["id"];
+        $id = $_GET["id"];
         $name = strip_tags($_POST["name"]);
         $distance = strip_tags($_POST["distance"]);
         $duration = strip_tags($_POST["duration"]);
@@ -20,26 +20,24 @@ if (!empty($_POST)) {
         require_once("connexion.php");
 
         try {
-        //$q = $db->prepare("UPDATE hikes (name, difficulty, distance, duration, elevation_gain, Img_link) VALUES (:name, :difficulty, :distance, :duration, :elevation, :link) WHERE ID=$id;");
-                $q = $db->prepare("UPDATE hikes SET name = :name, difficulty= :difficulty , distance = :distance, 
+            //$q = $db->prepare("UPDATE hikes (name, difficulty, distance, duration, elevation_gain, Img_link) VALUES (:name, :difficulty, :distance, :duration, :elevation, :link) WHERE ID=$id;");
+            $q = $db->prepare("UPDATE hikes SET name = :name, difficulty= :difficulty , distance = :distance, 
                 duration = :duration, elevation_gain = :elevation, Img_link = :link WHERE ID = $id;");
 
-                $q->bindParam(":name", $name, PDO::PARAM_STR, 40);
-                $q->bindParam(":difficulty", $difficulty, PDO::PARAM_STR, 20);
-                $q->bindParam(":distance", $distance, PDO::PARAM_STR, 6);
-                $q->bindParam(":duration", $duration, PDO::PARAM_STR, 5);
-                $q->bindParam(":elevation", $elevation, PDO::PARAM_INT, 5);
-                $q->bindParam(":link", $link, PDO::PARAM_STR, 200);
-                $q->execute();
+            $q->bindParam(":name", $name, PDO::PARAM_STR, 40);
+            $q->bindParam(":difficulty", $difficulty, PDO::PARAM_STR, 20);
+            $q->bindParam(":distance", $distance, PDO::PARAM_STR, 6);
+            $q->bindParam(":duration", $duration, PDO::PARAM_STR, 5);
+            $q->bindParam(":elevation", $elevation, PDO::PARAM_INT, 5);
+            $q->bindParam(":link", $link, PDO::PARAM_STR, 200);
+            $q->execute();
 
-                header("location: ../read.php?message=updatedSuccess");
-                exit;
+            header("location: ../read.php?message=updateSuccess");
+            exit;
         } catch (Exception $e) {
-            header("location: ../read.php?message=createdFailed");
+            header("location: ../read.php?message=updateFailed");
         }
-
-    }
-    else {
-        header("location: ../read.php?message=createdFailed");
+    } else {
+        header("location: ../read.php?message=updateFailed");
     }
 }
