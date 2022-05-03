@@ -52,12 +52,13 @@ include "header.php";
             ),
             url(<?php echo $modify["Img_link"] ?>);">
         <p> <?php echo $modify["name"]; ?>
+        <p> <?php echo $modify["ID"]; ?>
         <p><?php echo $modify["difficulty"], $modify["distance"] ?> km <?php $duration = (int)$modify["duration"];
                                                                         echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?php echo $modify["elevation_gain"]; ?> m</p>
     </div>
 
-    <h1>Create a new hike</h1>
-    <form method="post" action="updateData.php">
+    <h1>Update your hike</h1>
+    <form method="post" action="updateData.php?id=<?PHP echo $modify["ID"] ?>">
         <label for="name">Name </label>
         <input class="input is-medium" name="name" type="text" placeholder="<?php echo $modify["name"]; ?>">
         <label for="distance">Distance </label>
@@ -84,10 +85,12 @@ include "header.php";
                 <span style="color:black">Hard</span>
             </label>
         </div>
+        
         <div class="control">
             <input type="submit" class="button is-link" value="submit">
         </div>
     </form>
+
 </body>
 
 </html>
