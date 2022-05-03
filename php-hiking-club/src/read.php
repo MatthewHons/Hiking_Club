@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 require_once("connexion.php");
@@ -33,9 +34,9 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <header>
-        <div>
-            <h3>Menu</h3>
-        </div>
+        <?PHP
+            include("./header.php");
+        ?>
     </header>
     <section>
         <?php
