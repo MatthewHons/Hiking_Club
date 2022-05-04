@@ -7,7 +7,7 @@ include 'header.php'; ?>
     <input class="input is-medium" name="name" type="text" placeholder="Name">
     <label for="distance">Distance </label>
     <input class="input is-medium" name="distance" type="number" placeholder="Distance">
-    <label for="duration">Duration </label>
+    <label for="duration">Duration (min) </label>
     <input class="input is-medium" name="duration" type="number" placeholder="Duration in minutes">
     <label for="elevation">Elevation (+) </label>
     <input class="input is-medium" name="elevation" type="number" placeholder="Positive elevation">
