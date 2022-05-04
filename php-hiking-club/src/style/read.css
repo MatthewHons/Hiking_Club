@@ -46,9 +46,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body{
-    /* color: white; */
-}
+
 h3{
     color: black;
 }
@@ -73,6 +71,6 @@ section{
     border-radius: 1rem;
     background-repeat: no-repeat;
     background-size: cover;
-    color:black;
+    color:rgb(255, 255, 255);
     font-weight: bold;
 }
