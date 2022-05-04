@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./style/text.css">
     <link rel="stylesheet" href="./style/read.css">
+    <script src="https://kit.fontawesome.com/01b8f0a316.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

@@ -67,7 +67,8 @@ if (!empty($_POST)) {
         $_SESSION["user"] = [
             "ID" => $id,
             "pseudo" => $pseudo,
-            "email" => $_POST["email"]
+            "email" => $_POST["email"],
+            "is_admin" => $_POST["is_admin"]
         ];
 
         // redirect to index when done

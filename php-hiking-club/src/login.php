@@ -40,7 +40,8 @@ if (!empty($_POST)) {
         $_SESSION["user"] = [
             "ID" => $user["ID"],
             "pseudo" => $user["pseudo"],
-            "email" => $user["email"]
+            "email" => $user["email"],
+            "is_admin" => $user["is_admin"]
         ];
 
         header("location: read.php");

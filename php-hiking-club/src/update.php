@@ -45,7 +45,7 @@ include "header.php";
                                                                     echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?php echo $modify["elevation_gain"]; ?> m</p>
 </div>
 <?php if (isset($_SESSION["user"])) : ?>
-    <?php if ($_SESSION["user"]["ID"] == $modify["id_user"]) : ?>
+    <?php if (($_SESSION["user"]["ID"] == $modify["id_user"]) || $_SESSION["user"]["is_admin"]) : ?>
         <h1>Update your hike</h1>
         <form method="post" action="updateData.php?id=<?PHP echo $modify["ID"] ?>">
             <label for="name">Name </label>
