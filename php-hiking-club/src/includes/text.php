@@ -23,6 +23,31 @@ switch ($text) {
         $return = 'The hike was deleted successfully';
         $color = 'green';
         break;
+    case 'wrongPwd':
+        $return = 'The password don\'t match for that user.';
+        $color = 'red';
+        break;
+    case 'noPseudo':
+        $return = 'This username does not exist.';
+        $color = 'red';
+        break;
+    case 'subscriptionSuccess':
+        $return = 'Account created';
+        $color = 'green';
+        break;
+    case 'subscriptionFailed':
+        $return = 'Account Failed';
+        $color = 'red';
+        break;
+    case 'emailUsed':
+        $return = 'This email adress is already used. Please try again.';
+        $color = 'red';
+        break;
+    case 'userNameUsed':
+        $return = 'This username is already used. Please try again.';
+        $color = 'red';
+        break;
+
 
     default:
         print_r('error');
