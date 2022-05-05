@@ -6,7 +6,7 @@ Create a web application for listing hikes in Belgium.
 
 ### Site deploy
 
-to do !
+https://becode-hiking-club-matt-steph.herokuapp.com/index.php
 
 ## :memo: Features
 
