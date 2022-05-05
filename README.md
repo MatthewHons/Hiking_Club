@@ -31,3 +31,11 @@ to do !
 * B-Crypt
 * MySQL data base
 * Bulma css
+
+## :Trello
+
+https://trello.com/b/6RqSnAKw/hiking-club
+
+## :Figma
+
+https://www.figma.com/file/hRpPIYvZnmz0bqhkJm0sX7/Bulma-CSS-UI-Kit-v2.01-(Community)?node-id=306%3A12054
