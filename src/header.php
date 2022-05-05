@@ -41,10 +41,10 @@
                         Add
                     </a>
 
-                    <a class="navbar-item" href="#">
+                    <a class="navbar-item" href="profil.php?id=<?php echo $_SESSION["user"]["ID"]; ?>">
                         Profile
                     </a>
-                    <a class="navbar-item" href="logout.php">Logout</a>
+                    <a class=" navbar-item" href="logout.php">Logout</a>
 
                 <?php endif; ?>
 
