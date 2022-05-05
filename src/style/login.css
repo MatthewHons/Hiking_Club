@@ -1,11 +1,17 @@
-header{
-    height:60vh;
-    width:100vw;
+.index_img{
+    height:75vh;
+    width: 100%;
+    object-fit: cover;
+
 }
-.div_button{
-    height:40vh;
-    width:100vw;
+
+.index_button{
+    display: block;
+    text-align: center;
 }
-.div_button{
-    margin-top:7rem;
-}
+
+/* @media screen and (min-width: 800px) {
+    .index_img{
+        max-height:60vh;
+    }
+} */

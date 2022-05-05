@@ -16,11 +16,9 @@
 </head>
 
 <body>
-    <header>
-        <img src="https://images.unsplash.com/photo-1631897523496-7d4d4bc35057?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2487&q=80" alt="Hiking club">
-    </header>
+    <img class="index_img" src="./ressources/images/lukasz-szmigiel-jFCViYFYcus-unsplash.jpg" alt="Hiking club">
 
-    <section class="div_button">
+    <alt class="index_button">
         <img src="./ressources/images/logo-HC.svg">
         <div class="buttons is-centered">
             <button class="button is-primary">
@@ -42,7 +40,7 @@
                 <a class="navbar-item" href="read.php">Visit</a>
             </button>
         </div>
-    </section>
+</alt>
 
 </body>
 
