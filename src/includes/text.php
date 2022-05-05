@@ -47,7 +47,18 @@ switch ($text) {
         $return = 'This username is already used. Please try again.';
         $color = 'red';
         break;
-
+    case 'profilUpdate':
+        $return = 'The profil was updated successfully';
+        $color = 'green';
+        break;
+    case 'profilFailed':
+        $return = 'There was a problem updating your profil';
+        $color = 'red';
+        break;
+    case 'fillAll':
+        $return = 'You need to fill all the fields';
+        $color = 'red';
+        break;
 
     default:
         print_r('error');

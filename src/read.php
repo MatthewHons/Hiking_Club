@@ -23,7 +23,11 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
 <section>
     <?php
     //display the datas
+
     foreach ($hikes as $hike) : ?>
+        <?php $date_create = $hike["create_at"];
+        $date_update = $hike["update_at"];
+        ?>
 
         <div class=" card_hike" style="background-image: -webkit-linear-gradient(
             top,
@@ -32,7 +36,13 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             ),
             url(<?= $hike["Img_link"] ?>);">
 
-            <p><?= $hike["name"]; ?></p>
+            <?php if ($date_create != $date_update) {
+            ?><p> Updated at : <?= date("d-m-Y H:i", strtotime("$date_update")) . "\n"; ?></p>
+            <?php } else {
+            ?><p> Created at :<?= date("d-m-Y H:i", strtotime("$date_create")) . "\n"; ?></p>
+            <?php }
+
+            ?><p><?= $hike["name"]; ?></p>
 
             <p><?= $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
                                                                 echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?= $hike["elevation_gain"]; ?> m
