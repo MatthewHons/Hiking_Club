@@ -49,13 +49,13 @@ include "header.php";
         <h1>Update your hike</h1>
         <form method="post" action="updateData.php?id=<?= $modify["ID"] ?>">
             <label for="name">Name </label>
-            <input class="input is-medium" name="name" type="text" placeholder="<?= $modify["name"]; ?>">
+            <input class="input is-medium" name="name" type="text" value="<?= $modify["name"]; ?>">
             <label for="distance">Distance </label>
-            <input class="input is-medium" name="distance" type="number" placeholder="<?= $modify["distance"]; ?>">
+            <input class="input is-medium" name="distance" type="number" value="<?= $modify["distance"]; ?>">
             <label for="duration">Duration </label>
-            <input class="input is-medium" name="duration" type="number" placeholder="<?= $modify["duration"]; ?>">
+            <input class="input is-medium" name="duration" type="number" value="<?= $modify["duration"]; ?>">
             <label for="elevation">Elevation (+) </label>
-            <input class="input is-medium" name="elevation" type="number" placeholder="<?= $modify["elevation_gain"]; ?>">
+            <input class="input is-medium" name="elevation" type="number" value="<?= $modify["elevation_gain"]; ?>">
             <div>
                 <label class="radio">
                     <input type="radio" name="difficulty" value="Easy">
@@ -80,7 +80,7 @@ include "header.php";
             </div>
         </form>
         <button class="button is-danger is-outlined is-pulled-right">
-            <a href="delete.php?id=<?php echo $modify["ID"] ?>">
+            <a href="delete.php?id=<?= $modify["ID"] ?>">
                 <span>Delete</span>
                 <span class="icon is-small ">
                     <i class="fas fa-times"></i>
