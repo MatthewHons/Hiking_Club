@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hiking Club</title>
     <script src="./nav.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./style/text.css">
     <link rel="stylesheet" href="./style/read.css">
+    <link rel="icon" type="image/png" href="./ressources/favicon_io/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/01b8f0a316.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="read.php">
+            <a class="navbar-item" href="index.php">
                 <img src="./ressources/images/logo-HC.svg" width="112" height="28">
             </a>
 
