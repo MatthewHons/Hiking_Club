@@ -39,28 +39,28 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
         <?php
         //display the datas
         foreach ($hikes as $hike) : ?>
-            
-                <div class=" card_hike" style="background-image: -webkit-linear-gradient(
+
+            <div class=" card_hike" style="background-image: -webkit-linear-gradient(
             top,
             rgba(0, 0, 0, 0.2),
             rgba(255, 255, 255, 0.15)
             ),
-            url(<?php echo $hike["Img_link"] ?>);">
+            url(<?= $hike["Img_link"] ?>);">
 
-                    <p><?php echo $hike["name"]; ?></p>
+                <p><?= $hike["name"]; ?></p>
 
-                    <p><?php echo $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
-                    echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?php echo $hike["elevation_gain"]; ?> m
+                <p><?= $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
+                                                                    echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?= $hike["elevation_gain"]; ?> m
                     <?php if (isset($_SESSION["user"])) : ?>
                         <?php if (($_SESSION["user"]["ID"] == $hike["id_user"]) || $_SESSION["user"]["is_admin"]) : ?>
                             <a href="update.php?id=<?php echo $hike["ID"]; ?>"><i class="fa-solid fa-pen-to-square"></i>
                             </a>
                         <?php endif; ?>
-                    <?php endif; ?>    
+                    <?php endif; ?>
                 </p>
 
-                </div>
-            
+            </div>
+
         <?php
         endforeach;
 

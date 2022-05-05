@@ -39,23 +39,23 @@ include "header.php";
             rgba(0, 0, 0, 0.2),
             rgba(255, 255, 255, 0.15)
             ),
-            url(<?php echo $modify["Img_link"] ?>);">
-    <p> <?php echo $modify["name"]; ?>
-    <p><?php echo $modify["difficulty"], $modify["distance"] ?> km <?php $duration = (int)$modify["duration"];
-                                                                    echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?php echo $modify["elevation_gain"]; ?> m</p>
+            url(<?= $modify["Img_link"] ?>);">
+    <p> <?= $modify["name"]; ?>
+    <p><?= $modify["difficulty"], $modify["distance"] ?> km <?php $duration = (int)$modify["duration"];
+                                                            echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?= $modify["elevation_gain"]; ?> m</p>
 </div>
 <?php if (isset($_SESSION["user"])) : ?>
     <?php if (($_SESSION["user"]["ID"] == $modify["id_user"]) || $_SESSION["user"]["is_admin"]) : ?>
         <h1>Update your hike</h1>
-        <form method="post" action="updateData.php?id=<?PHP echo $modify["ID"] ?>">
+        <form method="post" action="updateData.php?id=<?= $modify["ID"] ?>">
             <label for="name">Name </label>
-            <input class="input is-medium" name="name" type="text" placeholder="<?php echo $modify["name"]; ?>">
+            <input class="input is-medium" name="name" type="text" placeholder="<?= $modify["name"]; ?>">
             <label for="distance">Distance </label>
-            <input class="input is-medium" name="distance" type="number" placeholder="<?php echo $modify["distance"]; ?>">
+            <input class="input is-medium" name="distance" type="number" placeholder="<?= $modify["distance"]; ?>">
             <label for="duration">Duration </label>
-            <input class="input is-medium" name="duration" type="number" placeholder="<?php echo $modify["duration"]; ?>">
+            <input class="input is-medium" name="duration" type="number" placeholder="<?= $modify["duration"]; ?>">
             <label for="elevation">Elevation (+) </label>
-            <input class="input is-medium" name="elevation" type="number" placeholder="<?php echo $modify["elevation_gain"]; ?>">
+            <input class="input is-medium" name="elevation" type="number" placeholder="<?= $modify["elevation_gain"]; ?>">
             <div>
                 <label class="radio">
                     <input type="radio" name="difficulty" value="Easy">
