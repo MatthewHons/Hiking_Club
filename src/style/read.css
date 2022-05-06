@@ -55,21 +55,43 @@ header{
     padding: 20px;
     border-bottom: 1px solid #e5e5e5;    
 }
-section{
-    background-color: rgb(0, 0, 0);
-    padding: 20px;
+
+.cont_card{
+    display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+    
+    background-color: black;
     border-bottom: 1px solid #e5e5e5;
 }
 .card_hike{
-    display:flex;
+    width: 340px;
+    height: 400px;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 10rem;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    background-repeat: no-repeat;
-    background-size: cover;
+    
+    margin: 20px;
+}
+
+.card_hike_pict{
+    height: 50%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    object-fit: fill;
+    
+}
+
+.card_hike_txt{
+    background-color: rgb(43, 40, 40);
     color:rgb(255, 255, 255);
     font-weight: bold;
+    height: 50%;
+    border-radius: 0 0 20px 20px;
+    padding: 10px;
+}
+
+.card_tittle{
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
 }

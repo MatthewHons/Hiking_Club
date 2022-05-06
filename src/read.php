@@ -23,7 +23,7 @@ try {
 $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <?php include 'header.php'; ?>
-<section>
+<div class="cont_card">
     <?php
     //display the datas
 
@@ -31,38 +31,41 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
         <?php $date_create = $hike["create_at"];
         $date_update = $hike["update_at"];
         ?>
+        <div class="card_hike">
+            <div class=" card_hike_pict" style="background-image: -webkit-linear-gradient(
+                top,
+                rgba(0, 0, 0, 0.2),
+                rgba(255, 255, 255, 0.15)
+                ),
+                url(<?= $hike["Img_link"] ?>);">
+            </div>
+            <div class="card_hike_txt">
+                <p class="card_tittle"><?= $hike["name"]; ?></p>
+                <?php if ($date_create != $date_update) {
+                ?><p> Updated at : <?= date("d-m-Y H:i", strtotime("$date_update")) . "\n"; ?></p>
+                <?php } else {
+                ?><p> Created at :<?= date("d-m-Y H:i", strtotime("$date_create")) . "\n"; ?></p>
+                <?php }
 
-        <div class=" card_hike" style="background-image: -webkit-linear-gradient(
-            top,
-            rgba(0, 0, 0, 0.2),
-            rgba(255, 255, 255, 0.15)
-            ),
-            url(<?= $hike["Img_link"] ?>);">
-
-            <?php if ($date_create != $date_update) {
-            ?><p> Updated at : <?= date("d-m-Y H:i", strtotime("$date_update")) . "\n"; ?></p>
-            <?php } else {
-            ?><p> Created at :<?= date("d-m-Y H:i", strtotime("$date_create")) . "\n"; ?></p>
-            <?php }
-
-            ?><p><?= $hike["name"]; ?></p>
-            <p>Creator : <?= $hike["pseudo"]?></p>
-            <p><?= $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
-                                                                echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?= $hike["elevation_gain"]; ?> m
-                <?php if (isset($_SESSION["user"])) : ?>
-                    <?php if (($_SESSION["user"]["ID"] == $hike["id_user"]) || $_SESSION["user"]["is_admin"]) : ?>
-                        <a href="update.php?id=<?php echo $hike["ID"]; ?>"><i class="fa-solid fa-pen-to-square"></i>
-                        </a>
+                ?>
+                <p>Creator : <?= $hike["pseudo"]?></p>
+                <p><?= $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
+                                                                    echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?= $hike["elevation_gain"]; ?> m
+                    <?php if (isset($_SESSION["user"])) : ?>
+                        <?php if (($_SESSION["user"]["ID"] == $hike["id_user"]) || $_SESSION["user"]["is_admin"]) : ?>
+                            <a href="update.php?id=<?php echo $hike["ID"]; ?>"><i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                        <?php endif; ?>
                     <?php endif; ?>
-                <?php endif; ?>
-            </p>
-
+                </p>
+            </div>
         </div>
-
+    
     <?php
-    endforeach;
-
-    if (isset($_GET['message']) && !empty($_GET['message'])) {
+    endforeach; ?>
+</div>
+<?php    
+if (isset($_GET['message']) && !empty($_GET['message'])) {
         include './includes/text.php';
     }
 
