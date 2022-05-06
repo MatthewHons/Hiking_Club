@@ -51,17 +51,18 @@ if (!empty($_POST)) {
 include "header.php";
 
 ?>
+<div class="container section">
+    <h1 class="block title is-3">User Login</h1>
 
-<h1>User Login</h1>
-
-<form method="post" action="">
-    <div>
-        <label for="pseudo">Pseudo :</label>
-        <input type="text" name="pseudo">
-    </div>
-    <div>
-        <label for="pwd">Password</label>
-        <input type="password" name="pwd">
-    </div>
-    <button type="submit">Login</button>
-</form>
+    <form method="post" action="">
+        <div>
+            <label for="pseudo">Pseudo :</label>
+            <input class="input is-medium" type="text" name="pseudo">
+        </div>
+        <div>
+            <label for="pwd">Password</label>
+            <input class="input is-medium" type="password" name="pwd">
+        </div>
+        <button class="button is-link" type="submit">Login</button>
+    </form>
+</div>
