@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./style/text.css">
     <link rel="stylesheet" href="./style/read.css">
+    <link rel="stylesheet" href="./style/form.css">
     <link rel="icon" type="image/png" href="./ressources/favicon_io/favicon-32x32.png">
     <script src="https://kit.fontawesome.com/01b8f0a316.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+<div class="container"> 
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="index.php">
@@ -83,6 +85,7 @@
             </div>
         </div>
     </nav>
+</div>
 </body>
 
 </html>
