@@ -7,7 +7,10 @@ try {
 
     //prepare() is a PDO method to make sure that our query is not subject to a SQL inject.
     //this returns a PDOStatement object
-    $q = $db->prepare("SELECT * FROM hikes");
+    //$q = $db->prepare("SELECT * FROM hikes");
+    $q = $db->prepare("SELECT * FROM users RIGHT JOIN hikes ON users.ID = hikes.id_user");
+
+    //$creator='SELECT DISTINCT $users["pseudo"] FROM $users INNER JOIN $hike ON $users["ID"] = $hike["id_user"] WHERE $user["ID"]';
 
     //To execute the query set into $q (PDOStatement) object
     $q->execute();
@@ -43,7 +46,7 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
             <?php }
 
             ?><p><?= $hike["name"]; ?></p>
-
+            <p>Creator : <?= $hike["pseudo"]?></p>
             <p><?= $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
                                                                 echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?= $hike["elevation_gain"]; ?> m
                 <?php if (isset($_SESSION["user"])) : ?>
