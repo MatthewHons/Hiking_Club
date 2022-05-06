@@ -82,21 +82,22 @@ if (!empty($_POST)) {
 include "header.php";
 
 ?>
+<div class="container section">
+    <h1 class="block title is-3">User subscription</h1>
 
-<h1>User subscription</h1>
-
-<form method="post" action="">
-    <div>
-        <label for="pseudo">Pseudo :</label>
-        <input type="text" name="pseudo">
-    </div>
-    <div>
-        <label for="email">Email :</label>
-        <input type="email" name="email">
-    </div>
-    <div>
-        <label for="pwd">Password :</label>
-        <input type="password" name="pwd">
-    </div>
-    <button type="submit">Subscribe</button>
-</form>
+    <form method="post" action="">
+        <div>
+            <label for="pseudo">Pseudo :</label>
+            <input class="input is-medium" type="text" name="pseudo">
+        </div>
+        <div>
+            <label for="email">Email :</label>
+            <input class="input is-medium" type="email" name="email">
+        </div>
+        <div>
+            <label for="pwd">Password :</label>
+            <input class="input is-medium" type="password" name="pwd">
+        </div>
+        <button class="button is-link" type="submit">Subscribe</button>
+    </form>
+</div>

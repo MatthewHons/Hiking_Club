@@ -32,27 +32,25 @@ if ($modify == FALSE) {
 include "header.php";
 
 ?>
-<div>
-    <p> <?= $modify["pseudo"]; ?></p>
-    <p><?= $modify["email"]; ?></p>
+<div class="container section">
+    <h2 class="block title is-3">Modify your profil</h2>
+    <form method="post" action="updateProfil.php?id=<?= $id ?>">
+        <label for="pseudo">Pseudo</label>
+        <input class="input is-medium" name="pseudo" type="text" value="<?= $modify["pseudo"]; ?>">
+        <label for="pwd">Password</label>
+        <input class="input is-medium" name="pwd" type="password">
+        <div class="control">
+            <input type="submit" class="button is-link" value="Modify">
+        </div>
+    </form>
+    <button class=" button is-danger is-outlined is-pulled-right">
+        <a href="delete.php?id=<?= $modify["ID"] ?>">
+            <span>Delete</span>
+            <span class="icon is-small ">
+                <i class="fas fa-times"></i>
+            </span>
+    </button>
 </div>
-<h2>Modify your profil</h2>
-<form method="post" action="updateProfil.php?id=<?= $id ?>">
-    <label for="pseudo">Pseudo</label>
-    <input class="input is-medium" name="pseudo" type="text" value="<?= $modify["pseudo"]; ?>">
-    <label for="pwd">Password</label>
-    <input class="input is-medium" name="pwd" type="password">
-    <div class="control">
-        <input type="submit" class="button is-link" value="Modify">
-    </div>
-</form>
-<button class=" button is-danger is-outlined is-pulled-right">
-    <a href="delete.php?id=<?= $modify["ID"] ?>">
-        <span>Delete</span>
-        <span class="icon is-small ">
-            <i class="fas fa-times"></i>
-        </span>
-</button>
 </body>
 
 </html>
