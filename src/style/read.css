@@ -64,7 +64,6 @@ section{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 85%;
     height: 10rem;
     margin: 1rem;
     padding: 1rem;
