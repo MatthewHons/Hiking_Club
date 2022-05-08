@@ -15,7 +15,6 @@ try {
 
     //To bind the $code variable to the :codeproduct declaration and give a type.
     $q->bindParam(":id", $id, PDO::PARAM_STR);
-
     //To execute the query set into results object
     // execute() return true or false
     $q->execute();
@@ -34,20 +33,28 @@ if ($modify == FALSE) {
 include "header.php";
 
 ?>
-<div class="container section">
-    <div class=" card_hike" style="background-image: -webkit-linear-gradient(
+<div class="cont_card">
+    <div class="card_hike">
+        <div class="card_hike_pict" style="background-image: -webkit-linear-gradient(
                 top,
                 rgba(0, 0, 0, 0.2),
                 rgba(255, 255, 255, 0.15)
                 ),
-                url(<?= $modify["Img_link"] ?>);">
-        <p> <?= $modify["name"]; ?>
-        <p><?= $modify["difficulty"], $modify["distance"] ?> km <?php $duration = (int)$modify["duration"];
-                                                                echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?= $modify["elevation_gain"]; ?> m</p>
+                url(./ressources/image/<?= $modify["Img_link"] ?>.jpeg);background-size: cover;">
+        </div>
+        <div class="card_hike_txt">
+            <p class="card_tittle"><?= $modify["name"]; ?></p>
+            <p><?= $modify["difficulty"] ?></p>
+            <p><?= $modify["distance"] ?> km</p>
+            <p><?php $duration = (int)$modify["duration"];
+                echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min</p>
+            <p><?= $modify["elevation_gain"]; ?> m</p>
+        </div>
     </div>
-    <?php if (isset($_SESSION["user"])) : ?>
+</div>
+<?php if (isset($_SESSION["user"])) : ?>
     <?php if (($_SESSION["user"]["ID"] == $modify["id_user"]) || $_SESSION["user"]["is_admin"]) : ?>
-        
+        <div class="container section">
             <h1 class="block title is-3">Update your hike</h1>
             <form method="post" action="updateData.php?id=<?= $modify["ID"] ?>">
                 <label for="name">Name </label>

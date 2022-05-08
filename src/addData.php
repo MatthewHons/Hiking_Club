@@ -1,5 +1,9 @@
 <?php
 session_start();
+// Prend un nombre random entre 1 et 20
+$num_rand = rand(1, 43);
+
+
 // Check if $_POST is not empty
 if (!empty($_POST)) {
     // 1. Check all the inputs exist
@@ -15,7 +19,7 @@ if (!empty($_POST)) {
         $duration = strip_tags($_POST["duration"]);
         $elevation = strip_tags($_POST["elevation"]);
         $difficulty = strip_tags($_POST["difficulty"]);
-        $link = "https://images.unsplash.com/photo-1586508896897-a1863f3e515e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80";
+        $link = $num_rand;
         $id_user = $_SESSION["user"]["ID"];
 
         require_once("connexion.php");
@@ -27,7 +31,7 @@ if (!empty($_POST)) {
             $q->bindParam(":distance", $distance, PDO::PARAM_STR, 6);
             $q->bindParam(":duration", $duration, PDO::PARAM_STR, 5);
             $q->bindParam(":elevation", $elevation, PDO::PARAM_INT, 5);
-            $q->bindParam(":link", $link, PDO::PARAM_STR, 200);
+            $q->bindParam(":link", $link, PDO::PARAM_STR, 20);
             $q->bindParam(":id_user", $id_user, PDO::PARAM_INT, 10);
             $q->execute();
             header("location: ../read.php?message=createdSuccess");

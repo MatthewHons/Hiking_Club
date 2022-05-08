@@ -32,12 +32,12 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
         $date_update = $hike["update_at"];
         ?>
         <div class="card_hike">
-            <div class=" card_hike_pict" style="background-image: -webkit-linear-gradient(
+            <div class="card_hike_pict" style="background-image: -webkit-linear-gradient(
                 top,
                 rgba(0, 0, 0, 0.2),
                 rgba(255, 255, 255, 0.15)
                 ),
-                url(<?= $hike["Img_link"] ?>);">
+                url(./ressources/image/<?= $hike["Img_link"] ?>.jpeg);background-size: cover;">
             </div>
             <div class="card_hike_txt">
                 <p class="card_tittle"><?= $hike["name"]; ?></p>
@@ -48,25 +48,28 @@ $hikes = $q->fetchAll(PDO::FETCH_ASSOC);
                 <?php }
 
                 ?>
-                <p>Creator : <?= $hike["pseudo"]?></p>
-                <p><?= $hike["difficulty"], $hike["distance"] ?> km <?php $duration = (int)$hike["duration"];
-                                                                    echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min, <?= $hike["elevation_gain"]; ?> m
-                    <?php if (isset($_SESSION["user"])) : ?>
-                        <?php if (($_SESSION["user"]["ID"] == $hike["id_user"]) || $_SESSION["user"]["is_admin"]) : ?>
-                            <a href="update.php?id=<?php echo $hike["ID"]; ?>"><i class="fa-solid fa-pen-to-square"></i>
-                            </a>
-                        <?php endif; ?>
+                <p>Creator : <?= $hike["pseudo"] ?></p>
+                <p><?= $hike["difficulty"] ?></p>
+                <p><?= $hike["distance"] ?> km</p>
+                <p><?php $duration = (int)$hike["duration"];
+                    echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min</p>
+                <p><?= $hike["elevation_gain"]; ?> m</p>
+                <?php if (isset($_SESSION["user"])) : ?>
+                    <?php if (($_SESSION["user"]["ID"] == $hike["id_user"]) || $_SESSION["user"]["is_admin"]) : ?>
+                        <a href="update.php?id=<?php echo $hike["ID"]; ?>"><i class="fa-solid fa-pen-to-square"></i>
+                        </a>
                     <?php endif; ?>
+                <?php endif; ?>
                 </p>
             </div>
         </div>
-    
+
     <?php
     endforeach; ?>
 </div>
-<?php    
+<?php
 if (isset($_GET['message']) && !empty($_GET['message'])) {
-        include './includes/text.php';
-    }
+    include './includes/text.php';
+}
 
-    ?>
+?>

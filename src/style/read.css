@@ -61,8 +61,6 @@ header{
     flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-    
-    background-color: black;
     border-bottom: 1px solid #e5e5e5;
 }
 .card_hike{
@@ -78,8 +76,6 @@ header{
     height: 50%;
     width: 100%;
     border-radius: 20px 20px 0 0;
-    object-fit: fill;
-    
 }
 
 .card_hike_txt{
