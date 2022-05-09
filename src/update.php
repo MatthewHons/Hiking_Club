@@ -44,11 +44,13 @@ include "header.php";
         </div>
         <div class="card_hike_txt">
             <p class="card_tittle"><?= $modify["name"]; ?></p>
-            <p><?= $modify["difficulty"] ?></p>
-            <p><?= $modify["distance"] ?> km</p>
-            <p><?php $duration = (int)$modify["duration"];
-                echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min</p>
-            <p><?= $modify["elevation_gain"]; ?> m</p>
+            <p><img src="https://www.visorando.be/img/fiches/difficulte-moyenne.min.png" title="Moyenne" alt="Moyenne" height="28" width="28"><?= $modify["difficulty"] ?></p>
+            <p><img src="https://www.visorando.be/img/fiches/distance.min.png" title="Distance" alt="Distance" height="28" width="28"><?= $modify["distance"] ?> km</p>
+            <p><img src="https://www.visorando.be/img/fiches/duree.min.png" title="Durée" alt="Durée" height="28" width="28"><?php $duration = (int)$modify["duration"];
+                                                                                                                                echo intdiv($duration, 60) . 'h' . ($duration % 60); ?> min</p>
+            <p>
+                <img src="https://www.visorando.be/img/fiches/denivele-plus.min.png" title="Dénivelé positif" alt="Dénivelé positif" height="28" width="28"><?= $modify["elevation_gain"]; ?> m
+            </p>
         </div>
     </div>
 </div>
