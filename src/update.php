@@ -67,19 +67,19 @@ include "header.php";
                 <input class="input is-medium" name="elevation" type="number" value="<?= $modify["elevation_gain"]; ?>">
                 <div>
                     <label class="radio">
-                        <input type="radio" name="difficulty" value="Easy">
+                        <input type="radio" name="difficulty" value="Easy" <?php echo ($modify['difficulty'] == "Easy" ? 'checked="checked"': ''); ?>>
                         <span style="color:black">Easy</span>
                     </label>
                 </div>
                 <div>
                     <label class="radio">
-                        <input type="radio" name="difficulty" value="Moderate">
+                        <input type="radio" name="difficulty" value="Moderate" <?php echo ($modify['difficulty'] == "Moderate" ? 'checked="checked"': ''); ?>>
                         <span style="color:black">Moderate</span>
                     </label>
                 </div>
                 <div>
                     <label class="radio">
-                        <input type="radio" name="difficulty" value="Hard">
+                        <input type="radio" name="difficulty" value="Hard" <?php echo ($modify['difficulty'] == "Hard" ? 'checked="checked"': ''); ?>>
                         <span style="color:black">Hard</span>
                     </label>
                 </div>

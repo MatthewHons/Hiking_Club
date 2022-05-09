@@ -6,7 +6,7 @@ Create a web application for listing hikes in Belgium.
 
 ### Site deploy
 
-https://becode-hiking-club-matt-steph.herokuapp.com/
+<https://becode-hiking-club-matt-steph.herokuapp.com/>
 
 ## :memo: Features
 
@@ -34,8 +34,8 @@ https://becode-hiking-club-matt-steph.herokuapp.com/
 
 ## Trello
 
-https://trello.com/b/6RqSnAKw/hiking-club
+<https://trello.com/b/6RqSnAKw/hiking-club>
 
 ## Figma
 
-https://www.figma.com/file/hRpPIYvZnmz0bqhkJm0sX7/Bulma-CSS-UI-Kit-v2.01-(Community)?node-id=306%3A12054
+<https://www.figma.com/file/hRpPIYvZnmz0bqhkJm0sX7/Bulma-CSS-UI-Kit-v2.01-(Community)?node-id=306%3A12054>
