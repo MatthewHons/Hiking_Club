@@ -1,5 +1,4 @@
 <?php
-$num_rand = rand(1, 43);
 if (!empty($_POST)) {
     ob_start();
     if (
@@ -13,7 +12,6 @@ if (!empty($_POST)) {
         $duration = strip_tags($_POST["duration"]);
         $elevation = strip_tags($_POST["elevation"]);
         $difficulty = strip_tags($_POST["difficulty"]);
-        $link = $num_rand;
         $update_date = date("Y-m-d H:i:s");
 
         require_once("connexion.php");
@@ -21,14 +19,13 @@ if (!empty($_POST)) {
         try {
             //$q = $db->prepare("UPDATE hikes (name, difficulty, distance, duration, elevation_gain, Img_link) VALUES (:name, :difficulty, :distance, :duration, :elevation, :link) WHERE ID=$id;");
             $q = $db->prepare("UPDATE hikes SET name = :name, difficulty= :difficulty , distance = :distance, 
-                duration = :duration, elevation_gain = :elevation, Img_link = :link, update_at = :update_at WHERE ID = $id;");
+                duration = :duration, elevation_gain = :elevation, update_at = :update_at WHERE ID = $id;");
 
             $q->bindParam(":name", $name, PDO::PARAM_STR, 40);
             $q->bindParam(":difficulty", $difficulty, PDO::PARAM_STR, 20);
             $q->bindParam(":distance", $distance, PDO::PARAM_STR, 6);
             $q->bindParam(":duration", $duration, PDO::PARAM_STR, 5);
             $q->bindParam(":elevation", $elevation, PDO::PARAM_INT, 5);
-            $q->bindParam(":link", $link, PDO::PARAM_STR, 20);
             $q->bindParam(":update_at", $update_date, PDO::PARAM_STR, 50);
             $q->execute();
 
